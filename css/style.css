@@ -266,3 +266,362 @@ html {
     color: #bdc3c7; /* 浅灰色文字，更柔和 */
     font-size: 0.9rem;
 }
+/*下面是图片展示*/
+.image-row {
+    display: flex;           /* 开启flex布局 */
+    justify-content: center; /* 水平居中 */
+    gap: 30px;               /* 图片之间的间距 */
+    margin: 40px 0;
+}
+
+.image-item {
+    flex: 1;                 /* 平均分配宽度 */
+    max-width: 500px;        /* 最大宽度限制 */
+}
+
+.image-item img {
+    width: 100%;             /* 图片占满容器宽度 */
+    height: auto;            /* 高度自动，保持比例 */
+    border-radius: 10px;     /* 圆角效果 */
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.3); /* 电竞红阴影 */
+}
+
+.image-caption {
+    text-align: center;
+    color: #8a8f99;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+/* 全局容器 - 所有内容居中，左右留白 */
+.container {
+    max-width: 1200px;    /* 最大宽度 */
+    margin: 0 auto;       /* 水平居中 */
+    padding: 0 20px;      /* 左右内边距，防止贴边 */
+}
+/* 所有板块通用间距 */
+section {
+    padding: 80px 0;        /* 上下80px内边距 */
+}
+/* 主标题 - 黑红渐变，居中 */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;      /* 稍微调小一点，和轮播图标题区分 */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #dd0606 10%, #0A0C0F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* 全局背景 */
+body {
+    background-color: #0a0c0f;  /* 深黑灰色，和导航栏一致 */
+    margin: 0;                   /* 去掉默认边距 */
+    padding: 0;
+    color: #fff;                 /* 默认文字颜色白色（可选） */
+    font-family: 'Arial', sans-serif; /* 统一字体 */
+}
+/* 容器：深色背景 + 内边距 + 圆角 */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #121212; /* 深黑，比原图更有质感 */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+
+/* 左侧图片：圆角 + 阴影 */
+.profile-image img {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+}
+
+/* 右侧标题：醒目红色 + 字体 */
+.profile-title {
+  font-size: 48px;
+  color: #c8102e; /* 更有电竞感的红色 */
+  margin: 0 0 24px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  bottom:50px;
+}
+
+/* 正文：行高、间距优化 */
+.profile-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* 高亮关键词：HLTV、Team Spirit 等 */
+.profile-text strong {
+  color: #c8102e;
+  font-weight: 600;
+}
+/* 职业生涯板块容器 */
+.career-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #fff;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+
+/* 标题样式：和职业档案统一 */
+.career-title {
+  font-size: 48px;
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 时间线布局 */
+.career-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 时间线项：左侧红色竖线 + 内边距 */
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: calc(100% - 10px);
+  background-color: #c8102e; /* 电竞红 */
+  border-radius: 2px;
+}
+
+/* 年份标题 */
+.timeline-year {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+/* 正文 */
+.timeline-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 0;
+}
+/* 荣誉成就容器 */
+.honor-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #fff;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+
+/* 标题样式：和前面统一 */
+.honor-title {
+  font-size: 48px;
+  color: #c8102e; /* 电竞红 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 荣誉列表：去掉默认圆点，用自定义红色圆点 */
+.honor-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 响应式两列布局 */
+  gap: 16px 24px;
+}
+
+/* 列表项：自定义红色圆点 + 排版 */
+.honor-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.honor-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c8102e; /* 电竞红圆点 */
+}
+/* 高光时刻容器 */
+.highlight-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #fff;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+
+/* 标题：和其他板块统一 */
+.highlight-title {
+  font-size: 48px;
+  color: #c8102e; /* 电竞红 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 视频容器：关键修改！用 padding-bottom 实现16:9比例 */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* 限制最大宽度，避免太宽 */
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 = 9 / 16 = 0.5625 */
+  height: 0; /* 高度由 padding-bottom 决定 */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* 视频：绝对定位填充整个容器 */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  background-color: #000; /* 视频加载前显示黑色背景 */
+}
+/* 视频悬停轻微放大（和图片同款交互） */
+.video-container {
+  transition: transform 0.3s ease;
+}
+.video-container:hover {
+  transform: scale(1.02);
+}
+.data-title {
+    font-size: 48px;
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* 网易云播放器固定在右下角 */
+.fixed-music-player {
+  position: fixed; /* 固定定位，脱离页面流 */
+  bottom: 20px;    /* 距离显示器底部20px */
+  right: 20px;     /* 距离显示器右侧20px */
+  z-index: 9999;   /* 层级拉满，避免被其他元素遮挡 */
+  width: 300px;    /* 播放器宽度（可自行调整） */
+  height: 80px;    /* 播放器高度（适配网易云默认尺寸） */
+  /* 可选：加轻微阴影，更贴合页面风格 */
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+  border-radius: 8px; /* 圆角，和页面风格统一 */
+  overflow: hidden; /* 避免播放器内容溢出 */
+}
+
+/* 强制适配网易云iframe尺寸 */
+.fixed-music-player iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none; /* 去掉默认边框 */
+}
+/* 弹窗遮罩层 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* 层级最高，覆盖所有元素 */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* 隐藏弹窗 */
+.modal.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* 弹窗内容容器 */
+.modal-content {
+  background-color: #121212;
+  padding: 40px 50px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #c8102e; /* 电竞红边框 */
+  box-shadow: 0 0 30px rgba(200, 16, 46, 0.5); /* 红色发光 */
+  max-width: 500px;
+  width: 90%;
+}
+
+/* 弹窗标题 */
+.modal-title {
+  color: #c8102e;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 弹窗文字 */
+.modal-text {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* 弹窗按钮 */
+.modal-btn {
+  padding: 12px 30px;
+  background-color: #c8102e;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+  background-color: #a00e24;
+  box-shadow: 0 0 15px rgba(200, 16, 46, 0.8);
+  transform: scale(1.05);
+}
