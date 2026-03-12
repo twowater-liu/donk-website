@@ -1,0 +1,268 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei", sans-serif;
+}
+/*导航栏*/
+.nav {
+            background-color: #0a0c0f; /* 电竞风深蓝色背景 */
+            padding: 0 20px;
+            display: flex; /* 开启flex布局 */
+            justify-content: space-between; /* 标题左，导航项右 */
+            align-items: center; /* 垂直居中 */
+            border-bottom: 2px solid #ff4655;/*添加红色底边框*/
+        }
+.nav-title {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 15px 0; /* 和导航项保持一致的高度 */
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #ff4655 100%);  /* 渐变效果 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;  /* 让标题有红白渐变 */
+        }
+/* 导航栏右侧列表 */
+        .nav-menu {
+            list-style: none;
+            display: flex; /* 导航项横向排列 */
+        }
+/* 导航链接样式 */
+        .nav-menu a {
+            display: block;
+            color: #8a8f99;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background-color 0.3s;
+        }
+/* 鼠标悬停效果 */
+.nav-menu a:hover {
+    color: #ff4655;                    /* 文字变蓝绿色 */
+    border-bottom: 2px solid #ff4655;  /* 底部加蓝绿色线条 */
+}
+
+/* 当前激活页面样式 */
+.nav-menu a.active {
+    color: #ff4655;                    /* 文字变蓝绿色 */
+    font-weight: bold;                  /* 文字加粗 */
+    border-bottom: 2px solid #ff4655;  /* 底部加蓝绿色线条 */
+    box-shadow: 0 0 8px #ff4655;  /* 发光效果 */
+}
+/* 轮播图容器 */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: #0a0c0f;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 轮播图主体 */
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    display: block;
+}
+
+/* 图片样式 */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 保持图片比例，裁剪填充 */
+    filter: brightness(0.7) saturate(1.2);  /* 调暗一点，让文字更清晰，增加饱和度 */
+}
+
+/* 文字说明 - 电竞风格 */
+.carousel-caption {
+    position: absolute;
+    bottom: 100px;
+    left: 10%;
+    right: 10%;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 0 20px rgba(255, 70, 85, 0.8);  /* 红色发光 */
+}
+
+.carousel-caption h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #ff4655 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    letter-spacing: 2px;
+}
+
+/* 左右箭头 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 70, 85, 0.3);
+    border: 2px solid #ff4655;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow:hover {
+    background: #ff4655;
+    box-shadow: 0 0 20px #ff4655;
+}
+
+.carousel-arrow.prev {
+    left: 30px;
+}
+
+.carousel-arrow.next {
+    right: 30px;
+}
+
+/* 小圆点指示器 */
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #ff4655;
+    box-shadow: 0 0 15px #ff4655;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #ff4655;
+}
+
+/* 动画效果 */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+    }
+    to {
+        text-shadow: 0 0 40px rgba(255, 70, 85, 0.8), 0 0 60px rgba(255, 70, 85, 0.5);
+    }
+}
+/* 在CSS里加一行，让滚动更平滑 */
+html {
+    scroll-behavior: smooth;  /* 所有锚点点击都有平滑滚动效果 */
+}
+.nav {
+    position: fixed;  /* 固定定位 */
+    top: 0;           /* 紧贴顶部 */
+    left: 0;          /* 紧贴左边 */
+    width: 100%;      /* 占满整个宽度 */
+    z-index: 1000;    /* 确保在其他元素上面 */
+    
+    /* 你原来的其他样式保持不变 */
+    background-color: #0a0c0f;
+    padding: 1rem 2rem;
+    /* ... */
+}
+/* 页脚整体样式 */
+.footer {
+    background-color: #0A0C0F; /* 和导航栏同色系，深色更适合页脚 */
+    color: #ffffff;
+    padding: 40px 0 20px; /* 上下内边距，顶部宽一点 */
+    margin-top: 80px; /* 和上方内容拉开距离 */
+}
+
+/* 页脚内容容器（居中+限制宽度） */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 友情链接标题 */
+.footer-links h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ff4655; /* 高亮色，和导航激活色呼应 */
+}
+
+/* 友情链接列表 */
+.friend-link-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* 自动换行 */
+    gap: 20px; /* 链接间距 */
+}
+
+/* 友情链接样式 */
+.friend-link-list a {
+    color: #ecf0f1; /* 浅白色文字 */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* 链接悬停效果 */
+.friend-link-list a:hover {
+    color: #1abc9c; /* 悬停变高亮色 */
+    text-decoration: underline; /* 下划线提示 */
+}
+
+/* 版权信息 */
+.footer-copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e; /* 分隔线 */
+    color: #bdc3c7; /* 浅灰色文字，更柔和 */
+    font-size: 0.9rem;
+}
